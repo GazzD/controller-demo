@@ -2,6 +2,7 @@ package com.ironhack.controllerdemo.model;
 
 import com.ironhack.controllerdemo.enums.Category;
 import com.ironhack.controllerdemo.enums.Department;
+import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import javax.validation.constraints.Digits;
@@ -9,6 +10,7 @@ import javax.validation.constraints.NotEmpty;
 import java.math.BigDecimal;
 
 @Entity
+@DynamicUpdate
 public class Product {
 
     @Id
