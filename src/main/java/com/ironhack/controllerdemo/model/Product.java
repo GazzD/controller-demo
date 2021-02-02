@@ -4,6 +4,8 @@ import com.ironhack.controllerdemo.enums.Category;
 import com.ironhack.controllerdemo.enums.Department;
 
 import javax.persistence.*;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotEmpty;
 import java.math.BigDecimal;
 
 @Entity
@@ -12,7 +14,9 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotEmpty(message = "Name is required")
     private String name;
+    @Digits(integer = 6, fraction = 2, message = "Wrong price format")
     private BigDecimal price;
     @Enumerated(EnumType.STRING)
     private Category category;
