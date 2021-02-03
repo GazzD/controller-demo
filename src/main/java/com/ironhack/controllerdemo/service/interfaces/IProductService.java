@@ -8,5 +8,6 @@ public interface IProductService {
 
     public void update(long id, Product product);
     public void updatePrice(long id, BigDecimal price);
+    public void delete(long id);
 
 }

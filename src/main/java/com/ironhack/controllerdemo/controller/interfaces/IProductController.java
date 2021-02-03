@@ -13,5 +13,6 @@ public interface IProductController {
     public Product store(Product product);
     public void update(long id, Product product);
     public void updatePrice(long id, PriceDTO priceDTO);
+    public void delete(long id);
 
 }

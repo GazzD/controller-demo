@@ -60,4 +60,9 @@ public class ProductController implements IProductController {
         productService.updatePrice(id, priceDTO.getPrice());
     }
 
+    @DeleteMapping("/products/{id}")
+    public void delete(@PathVariable long id) {
+        productRepository.deleteById(id);
+    }
+
 }

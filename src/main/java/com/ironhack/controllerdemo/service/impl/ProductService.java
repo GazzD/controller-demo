@@ -36,4 +36,12 @@ public class ProductService implements IProductService {
         }
 
     }
+
+    public void delete(long id) {
+        if (productRepository.findById(id).isPresent()) {
+            productRepository.deleteById(id);
+        } else {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Product not found :C");
+        }
+    }
 }
